@@ -11,7 +11,7 @@ namespace CSharpSecaoCinco
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Seção Cinco do Curso C# da Udemy!");
+            ExercicioEstoque.ExecutarExercicioEstoque();
         }
     }
 }
