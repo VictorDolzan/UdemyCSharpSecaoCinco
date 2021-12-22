@@ -14,15 +14,21 @@ namespace CSharpSecaoCinco
         private int _quantidadeProduto;
 
         //CONSTRUTOR
-        public Produto(string nome, double preco, int quantidade)
+
+        public Produto()
+        {
+            _quantidadeProduto = 10;
+        }
+        public Produto(string nome, double preco) : this()
         {
             _nomeProduto = nome;
-            _precoProduto = preco;
-            _quantidadeProduto = quantidade;
+            _precoProduto = preco;            
         }
 
-
-        //private double _quantidadeTotal;
+        public Produto(string nome, double preco, int quantidade) : this(nome, preco)
+        {
+            _quantidadeProduto = quantidade;
+        }
         public string NomeProduto
         {
             get
@@ -45,13 +51,24 @@ namespace CSharpSecaoCinco
                 _precoProduto = value;
             }
         }
+        public int QuantidadeProduto
+        {
+            get
+            {
+                return _quantidadeProduto;
+            }
+            set
+            {
+                _quantidadeProduto = value;
+            }
+        }
         public void AdicionarProdutos(int quantidadeExterna)
         {
-            _quantidadeProduto += quantidadeExterna;            
+            _quantidadeProduto += quantidadeExterna;
         }
         public void RemoverProdutos(int quantidadeExterna)
         {
-            
+
             if (quantidadeExterna > _quantidadeProduto)
             {
                 Console.WriteLine("Valor Inválido!");
@@ -59,7 +76,7 @@ namespace CSharpSecaoCinco
             }
             else
             {
-                _quantidadeProduto -= quantidadeExterna;                
+                _quantidadeProduto -= quantidadeExterna;
             }
         }
         public double ValorTotalEmEstoque()
@@ -70,7 +87,7 @@ namespace CSharpSecaoCinco
         public override string ToString()
         {
             return _nomeProduto
-             + ", R$" 
+             + ", R$"
              + _precoProduto.ToString("F2", CultureInfo.CurrentCulture)
              + ", "
              + _quantidadeProduto
