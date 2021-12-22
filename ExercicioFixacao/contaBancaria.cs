@@ -20,7 +20,7 @@ namespace CSharpSecaoCinco
             {
                 return _SaldoConta;
             }
-            set
+            private set
             {
                 if (_SaldoConta < 0)
                 {
