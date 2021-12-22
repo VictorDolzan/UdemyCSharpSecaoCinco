@@ -61,9 +61,9 @@ namespace CSharpSecaoCinco
 
         public double ChecagemDepositoInicial()
         {
-            Console.WriteLine("Haverá depósito inicial (s/n): ");
-            int checkLetra = int.Parse(Console.ReadLine());
-            if (checkLetra == 1 )
+            Console.Write("Haverá depósito inicial (s/n): ");
+            char checkLetra = char.Parse(Console.ReadLine());
+            if (checkLetra == 's' || checkLetra == 'S' )
             {
                 Console.Write("Entre o valor do depósito inicial: ");
                 double checkDeposito = double.Parse(Console.ReadLine());
@@ -86,7 +86,7 @@ namespace CSharpSecaoCinco
 
         public double SacarValor(double valorExterno)
         {
-            _SaldoConta -= valorExterno;
+            _SaldoConta -= valorExterno + 5.00;
             return _SaldoConta;
         }
 

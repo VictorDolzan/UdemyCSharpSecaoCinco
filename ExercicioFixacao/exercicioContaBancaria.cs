@@ -29,13 +29,9 @@ namespace CSharpSecaoCinco
             Console.WriteLine();
             Console.Write("Entre um valor para saque: ");
             cont1.SacarValor(double.Parse(Console.ReadLine()));
-            Console.WriteLine("Dados da conta atualizados: " + cont1);
-
-
-
+            Console.WriteLine("Dados da conta atualizados: " + cont1);            
             
             
-            //Console.WriteLine("Dados da conta: " + cont1);
            
            
         }
