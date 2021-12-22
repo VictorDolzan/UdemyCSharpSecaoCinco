@@ -23,16 +23,13 @@ namespace CSharpSecaoCinco
 
             Console.WriteLine();
             Console.Write("Entre um valor para depósito: ");
-            cont1.SaldoConta = double.Parse(Console.ReadLine());
+            cont1.DepositarValor(double.Parse(Console.ReadLine()));
             Console.WriteLine("Dados da conta atualizados: " + cont1);
 
             Console.WriteLine();
             Console.Write("Entre um valor para saque: ");
             cont1.SacarValor(double.Parse(Console.ReadLine()));
-            Console.WriteLine("Dados da conta atualizados: " + cont1);            
-            
-            
-           
+            Console.WriteLine("Dados da conta atualizados: " + cont1);         
            
         }
     }

@@ -84,10 +84,21 @@ namespace CSharpSecaoCinco
             return SaldoConta;
         }
 
-        public double SacarValor(double valorExterno)
+        public void SacarValor(double valorExterno)
         {
-            _SaldoConta -= valorExterno + 5.00;
-            return _SaldoConta;
+            _SaldoConta -= valorExterno + 5.00;            
+        }
+
+        public void DepositarValor(double quantia)
+        {
+            if (quantia < 0)
+                {
+                    Console.WriteLine("Não é possível depositar esse valor!");                    
+                }
+                else
+                {
+                    _SaldoConta += quantia;
+                }             
         }
 
         public override string ToString()
