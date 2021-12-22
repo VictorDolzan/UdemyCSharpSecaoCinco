@@ -10,25 +10,26 @@ namespace CSharpSecaoCinco
     class Produto
     {
         private string _nomeProduto;
-        private double _precoProduto;
-        private int _quantidadeProduto;
+        public double PrecoProduto{ get; private set;}
+        public int QuantidadeProduto{ get; private set; }
 
-        //CONSTRUTOR
-
-        public Produto()
-        {
-            _quantidadeProduto = 10;
+        //CONSTRUTORES
+        public Produto(){            
         }
         public Produto(string nome, double preco) : this()
         {
             _nomeProduto = nome;
-            _precoProduto = preco;            
+            PrecoProduto = preco;
         }
-
-        public Produto(string nome, double preco, int quantidade) : this(nome, preco)
+        public Produto(string nome, double preco, int quantidade)
         {
-            _quantidadeProduto = quantidade;
+            NomeProduto = nome;
+            PrecoProduto = preco;
+            QuantidadeProduto = quantidade;
         }
+        //FIM DOS CONSTRUTORES
+
+        //ENCAPSULAMENTO GET/SET- PROPRIEDADES CUSTOMIZADAS
         public string NomeProduto
         {
             get
@@ -37,63 +38,49 @@ namespace CSharpSecaoCinco
             }
             set
             {
-                _nomeProduto = value;
+                if (value != null && value.Length > 1)
+                {
+                    _nomeProduto = value;
+                }
             }
-        }
-        public double PrecoProduto
-        {
-            get
-            {
-                return _precoProduto;
-            }
-            set
-            {
-                _precoProduto = value;
-            }
-        }
-        public int QuantidadeProduto
-        {
-            get
-            {
-                return _quantidadeProduto;
-            }
-            set
-            {
-                _quantidadeProduto = value;
-            }
-        }
+        }       
+        //FIM DO ENCAPSULAMENTOS- PROPRIEDADES CUSTOMIZADAS
+
+        //FUNÇÕES
         public void AdicionarProdutos(int quantidadeExterna)
         {
-            _quantidadeProduto += quantidadeExterna;
+            QuantidadeProduto += quantidadeExterna;
         }
         public void RemoverProdutos(int quantidadeExterna)
         {
 
-            if (quantidadeExterna > _quantidadeProduto)
+            if (quantidadeExterna > QuantidadeProduto)
             {
                 Console.WriteLine("Valor Inválido!");
                 return;
             }
             else
             {
-                _quantidadeProduto -= quantidadeExterna;
+                QuantidadeProduto -= quantidadeExterna;
             }
         }
         public double ValorTotalEmEstoque()
         {
-            return _precoProduto * _quantidadeProduto;
+            return PrecoProduto * QuantidadeProduto;
         }
 
         public override string ToString()
         {
             return _nomeProduto
              + ", R$"
-             + _precoProduto.ToString("F2", CultureInfo.CurrentCulture)
+             + PrecoProduto.ToString("F2", CultureInfo.CurrentCulture)
              + ", "
-             + _quantidadeProduto
+             + QuantidadeProduto
              + " unidades, Total R$"
              + ValorTotalEmEstoque().ToString("F2", CultureInfo.CurrentCulture);
         }
+
+        //FIM DAS FUNÇÕES
 
     }
 }

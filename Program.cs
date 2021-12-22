@@ -11,7 +11,8 @@ namespace CSharpSecaoCinco
     {
         public static void Main(string[] args)
         {
-            ExercicioEstoque.ExecutarExercicioEstoque();
+            //ExercicioEstoque.ExecutarExercicioEstoque();
+            ExercicioContaBancaria.ExecutarExercicioContaBancaria();
         }
     }
 }

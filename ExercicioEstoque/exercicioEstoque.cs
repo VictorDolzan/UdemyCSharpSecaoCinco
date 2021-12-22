@@ -22,11 +22,11 @@ namespace CSharpSecaoCinco
 
            Produto prod1 = new Produto(nomeProd, precoProd, quantidadeProd);
 
-           Produto prod2 = new Produto { 
-               NomeProduto = "TV",
-               PrecoProduto = 500.00, 
-               QuantidadeProduto = 20 
-            };
+        //    Produto prod2 = new Produto { 
+        //        NomeProduto = "TV",
+        //        PrecoProduto = 500.00, 
+        //        QuantidadeProduto = 20 
+        //     };
 
            Console.WriteLine("Dados do produto: " + prod1); 
            
