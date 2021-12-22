@@ -67,7 +67,7 @@ namespace CSharpSecaoCinco
             {
                 Console.Write("Entre o valor do depósito inicial: ");
                 double checkDeposito = double.Parse(Console.ReadLine());
-                if (SaldoConta < 0)
+                if (checkDeposito < 0)
                 {
                     Console.WriteLine("Não é possível depositar esse valor!");
                 }
